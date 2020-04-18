@@ -1,0 +1,5 @@
+node_modules
+target
+metals.sbt
+.metals
+.bloop
