@@ -41,9 +41,8 @@ class Program(val gl: WGL2, vshaderSrc: String, fshaderSrc: String) {
 
 	// private def setUniform( varName: String, value: ℝ|Vec2|Vec3|Vec4|Texture ) {
 	private def setUniform( varName: String, value: ℤ|ℝ|vec2|vec3|vec4|mat2|mat3|mat4|tex2|tex3 ): Unit = {
-		def uniformLocation: std.WebGLUniformLocation =
-			// cast to std needed because of https://github.com/ScalablyTyped/Converter/issues/146
-			gl.getUniformLocation(program, varName).nn.asInstanceOf[std.WebGLUniformLocation]
+		def uniformLocation: webgl.UniformLocation =
+			gl.getUniformLocation(program, varName).nn
 
 			// pourquoi def et pas juste une val ? euh on peut aussi si on est sur que c'est jamais null. Si on l'appelle qu'une seule fois ça fait pas de diférence
 
