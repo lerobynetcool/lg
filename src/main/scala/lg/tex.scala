@@ -72,7 +72,7 @@ class TexGPU(val gl: WGL2) {
 		use(() => {
 			val unpackFlipYbefore = gl.getParameter(WGL2.UNPACK_FLIP_Y_WEBGL).asInstanceOf[Int]
 			gl.pixelStorei(WGL2.UNPACK_FLIP_Y_WEBGL, 1)
-			// We need to use casts to std here because of https://github.com/ScalablyTyped/Converter/issues/146
+			// We need to use casts to std here because of https://github.com/ScalablyTyped/Converter/issues/146#issuecomment-624139050
 			(data: Any) match {
 				case data: html.Image  => gl.texImage2D(WGL2.TEXTURE_2D, 0, WGL2.RGBA, WGL2.RGBA, WGL2.UNSIGNED_BYTE, data.asInstanceOf[std.HTMLImageElement])
 				case data: html.Canvas => gl.texImage2D(WGL2.TEXTURE_2D, 0, WGL2.RGBA, WGL2.RGBA, WGL2.UNSIGNED_BYTE, data.asInstanceOf[std.HTMLCanvasElement])

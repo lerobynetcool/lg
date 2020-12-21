@@ -7,10 +7,8 @@ scalaVersion := "2.13.1"
 scalaJSUseMainModuleInitializer := true
 libraryDependencies += "org.scala-js" %%% "scalajs-dom" % "1.0.0"
 
-//libraryDependencies += ScalablyTyped.W.webgl2
-
 Compile / npmDependencies ++= Seq(
-  "@types/webgl2" -> "0.0.5"
+  // Add typescript bindings here if needed
 )
 
 scalacOptions ++= Seq(
